@@ -1,70 +1,207 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kashinath Chari | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kashinath Chari | Turning Ideas into Elegant Mobile Apps</title>
   <style>
-    /* Reset & Fonts */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
-    body { background-color: #121212; color: #ffffff; line-height: 1.6; }
-
-    /* Header */
-    header { text-align: center; padding: 50px 20px; }
-    .profile-photo { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #00bcd4; margin-bottom: 20px; }
-    h1 { font-size: 2.5rem; color: #00bcd4; margin-bottom: 10px; }
-    h2 { font-size: 1.2rem; color: #aaaaaa; }
-
-    /* Projects */
-    .projects { max-width: 900px; margin: 50px auto; padding: 0 20px; }
-    .project { background-color: #1e1e1e; border-radius: 12px; padding: 20px; margin-bottom: 20px; transition: transform 0.3s; }
-    .project:hover { transform: scale(1.02); }
-    .project h3 { color: #00bcd4; margin-bottom: 10px; }
-    .project p { margin-bottom: 10px; color: #ddd; }
-    .project a { color: #ff9800; text-decoration: none; font-weight: bold; }
-    .project a:hover { text-decoration: underline; }
-
-    /* Footer */
-    footer { text-align: center; padding: 30px 20px; color: #777; font-size: 0.9rem; border-top: 1px solid #333; }
+    :root{
+      --bg:#0b0f13;
+      --card:#0f1720;
+      --muted:#9aa6b2;
+      --accent:#8b5cf6;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071018);color:#e6eef6}
+    .container{max-width:980px;margin:36px auto;padding:28px}
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:112px;height:112px;border-radius:18px;background:linear-gradient(135deg,var(--glass),transparent);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:28px}
+    h1{margin:0;font-size:22px}
+    p.lead{margin:6px 0;color:var(--muted)}
+    .top-actions{margin-left:auto;display:flex;gap:10px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--accent);text-decoration:none;font-weight:600}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:22px}
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(5,8,12,0.6)}
+    .section-title{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .pill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
+    .projects{display:grid;gap:12px}
+    .project{padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
+    .project h4{margin:0 0 6px 0}
+    .muted{color:var(--muted);font-size:13px}
+    .timeline{display:flex;flex-direction:column;gap:12px}
+    .time-item{display:flex;gap:12px}
+    .time-item .meta{min-width:120px;color:var(--muted);font-size:13px}
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}.top-actions{margin:12px 0 0 auto}}
+    a.link{color:var(--accent);text-decoration:none}
   </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <div class="avatar" id="avatar">KC</div>
+      <div>
+        <h1>Kashinath Chari</h1>
+        <div class="lead">Turning Ideas into Elegant Mobile Apps — Android &amp; Flutter Developer (9+ years)</div>
+        <div style="margin-top:10px;color:var(--muted);font-size:13px">
+          <strong>Location:</strong> Goa &nbsp; • &nbsp; <strong>Email:</strong> kchari24@gmail.com &nbsp; • &nbsp; <strong>Phone:</strong> +91-9975543875
+        </div>
+      </div>
+      <div class="top-actions">
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </header>
 
-  <!-- Header -->
-  <header>
-    <img src="profile-photo.jpg" alt="Kashinath Chari" class="profile-photo">
-    <h1>Kashinath Chari</h1>
-    <h2>Architecting Robust Mobile Solutions – Turning Ideas into Elegant Mobile Apps</h2>
-  </header>
+    <div class="grid">
+      <div>
+        <!-- About Me -->
+        <section class="card" id="about">
+          <div class="section-title">About Me</div>
+          <p>I’m a Senior Android Developer with 9+ years of experience building production mobile apps. My work spans Android (Kotlin, Java), Jetpack Compose, Flutter, REST APIs, and NFC/RFID integrations. I ship clean, maintainable code and build user‑friendly experiences that scale.</p>
+          <div style="margin-top:14px">
+            <div class="section-title">Key Skills</div>
+            <div class="skills" style="margin-top:8px">
+              <div class="pill">Android (Kotlin & Java)</div>
+              <div class="pill">Jetpack Compose</div>
+              <div class="pill">Flutter</div>
+              <div class="pill">REST APIs</div>
+              <div class="pill">RFID / NFC</div>
+              <div class="pill">MVVM</div>
+              <div class="pill">SQL / MySQL</div>
+              <div class="pill">Git</div>
+            </div>
+          </div>
+        </section>
 
-  <!-- Projects Section -->
-  <section class="projects">
-    
-    <!-- Project 1 -->
-    <div class="project">
-      <h3>Finergy</h3>
-      <p><strong>Role:</strong> Android & Flutter Developer</p>
-      <p>AI-powered financial advisory app for agents to provide customized client plans efficiently.</p>
-      <p><strong>Tech Stack:</strong> Android (Java, ViewBinding), Flutter, REST APIs, Drift, JSON</p>
-      <p><a href="https://play.google.com/store/apps/details?id=com.designway.pvt.finergy" target="_blank">View on Play Store</a></p>
+        <!-- Projects -->
+        <section class="card" id="projects" style="margin-top:18px">
+          <div class="section-title">Selected Projects</div>
+          <div class="projects">
+            <div class="project">
+              <h4>Finergy — Financial Advisor App</h4>
+              <div class="muted">Kotlin • Jetpack Compose • Android Studio</div>
+              <p style="margin:8px 0 0">App for financial advisors to manage clients, marketing, notifications and dashboards. Implemented REST APIs, UI in Compose and analytics views.</p>
+              <div style="margin-top:8px"><a class="link" href="https://play.google.com/store/apps/details?id=com.designway.pvt.finergy&pli=1" target="_blank">Play Store link</a></div>
+            </div>
+
+            <div class="project">
+              <h4>My Portal — Employee & Org Portal</h4>
+              <div class="muted">Android • Flutter • REST APIs</div>
+              <p style="margin:8px 0 0">Organizational portal for employees with real-time updates, document downloads, and offline support. Integrated secure login and intuitive UI for seamless experience.</p>
+              <div style="margin-top:8px"><a class="link" href="https://play.google.com/store/apps/details?id=com.opencomparisonltd.myportal" target="_blank">Play Store link</a></div>
+            </div>
+
+            <div class="project">
+              <h4>Parko — Parking POS App</h4>
+              <div class="muted">Kotlin • POS integration • QR payments</div>
+              <p style="margin:8px 0 0">Parking solution for entry/exit, QR-based tickets, payment via UPI/Cards/Cash and fee calculation. Worked on QR generation and scanning flows.</p>
+            </div>
+
+            <div class="project">
+              <h4>Active Scan — Asset Tracking</h4>
+              <div class="muted">Kotlin • Barcode/Scan • Android</div>
+              <p style="margin:8px 0 0">Asset tracking app with barcode scanning, image upload and audit reports. Integrated server sync and export features.</p>
+            </div>
+
+            <div class="project">
+              <h4>VUMNL &amp; Education Apps</h4>
+              <div class="muted">Java / Android • REST API</div>
+              <p style="margin:8px 0 0">Banking and education apps: account management, reports, e-learning platforms and admin portals.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="card" style="margin-top:18px">
+          <div class="section-title">Experience</div>
+          <div class="timeline">
+            <div class="time-item">
+              <div class="meta">Dec 2022 - Present</div>
+              <div>
+                <strong>Senior Software Developer</strong> — Designway, Patto‑Panjim
+                <div class="muted">Android &amp; Kotlin development, app architecture and delivery</div>
+              </div>
+            </div>
+            <div class="time-item">
+              <div class="meta">Aug 2021 - Sep 2022</div>
+              <div>
+                <strong>Senior Software Developer</strong> — Hiteshi Infotech Pvt. Ltd., Indore
+                <div class="muted">Mobile & server-side REST API development</div>
+              </div>
+            </div>
+            <div class="time-item">
+              <div class="meta">May 2017 - Jul 2021</div>
+              <div>
+                <strong>Senior Software Developer</strong> — Chowgule Education Society, Goa
+                <div class="muted">E-learning apps and institutional solutions</div>
+              </div>
+            </div>
+            <div class="time-item">
+              <div class="meta">May 2012 - Apr 2017</div>
+              <div>
+                <strong>Software Developer</strong> — V‑Tech Infosoft, Goa
+                <div class="muted">Various Android and J2ME projects</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside>
+        <div class="card" id="contact">
+          <div class="section-title">Contact</div>
+          <div style="margin-top:8px">
+            <div class="muted">Email</div>
+            <div><a class="link" href="mailto:kchari24@gmail.com">kchari24@gmail.com</a></div>
+          </div>
+          <div style="margin-top:10px">
+            <div class="muted">Phone</div>
+            <div>+91‑9975543875</div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="section-title">Resume</div>
+            <div class="muted">Download a copy of my CV</div>
+            <div style="margin-top:8px"><a class="btn" id="downloadCv" href="#">Download CV</a></div>
+            <p style="font-size:12px;color:var(--muted);margin-top:8px">(Replace the CV link with your hosted resume/pdf file when you deploy.)</p>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="section-title">Tech & Tools</div>
+            <div class="skills" style="margin-top:8px">
+              <div class="pill">Android Studio</div>
+              <div class="pill">Kotlin</div>
+              <div class="pill">Jetpack</div>
+              <div class="pill">Dio / Retrofit</div>
+              <div class="pill">SQLite / Drift</div>
+              <div class="pill">Figma</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <div class="section-title">Languages</div>
+          <div class="muted">English • Hindi • Konkani • Marathi</div>
+        </div>
+      </aside>
     </div>
 
-    <!-- Project 2 -->
-    <div class="project">
-      <h3>My Portal</h3>
-      <p><strong>Role:</strong> Android & Flutter Developer</p>
-      <p>A secure organizational portal for employees, featuring real-time updates, document downloads, and offline support.</p>
-      <p><strong>Tech Stack:</strong> Android (Java, ViewBinding), Flutter, REST APIs, Drift, JSON</p>
-      <p><a href="https://play.google.com/store/apps/details?id=com.opencomparisonltd.myportal" target="_blank">View on Play Store</a></p>
-    </div>
+    <footer>
+      Built by Kashinath Chari · Available for freelance work · <span id="year"></span>
+    </footer>
+  </div>
 
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Kashinath Chari. All rights reserved.
-  </footer>
-
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('downloadCv').addEventListener('click', function(e){
+      e.preventDefault();
+      alert('When you deploy: replace the # on the CV button with the public URL to your resume PDF (GitHub raw link or hosted URL).');
+    });
+  </script>
 </body>
 </html>
